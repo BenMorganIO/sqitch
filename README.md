@@ -30,7 +30,7 @@ To alias this guy to your Ecto setup we need to do two things.
 
     config :sqitch, :system,
       into: IO.stream(:stdio, :line),
-      cd: "my_sqitch_app"
+      cd: "#{__DIR__}/my_sqitch_app"
     ```
 
 2. Now that the sqitch task knows where to look for your sqitch project we can
