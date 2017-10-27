@@ -8,12 +8,18 @@ defmodule Sqitch.Mixfile do
       elixir: "~> 1.5",
       start_permanent: Mix.env == :prod,
       config_path: "config/config.exs",
-      deps: [],
+      deps: deps(),
       package: package()
     ]
   end
 
   def application, do: [extra_applications: [:logger]]
+
+  defp deps do
+    [
+      {:ex_doc, ">= 0.0.0", only: :dev}
+    ]
+  end
 
   defp package do
     [
